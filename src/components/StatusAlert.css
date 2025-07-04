@@ -1,0 +1,37 @@
+.status-alert {
+  position: fixed;
+  left: 50%;
+  bottom: 27px;
+  transform: translateX(-50%);
+  min-width: 150px;
+  max-width: 80vw;
+  padding: 8px 18px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #fff;
+  z-index: 9999;
+  box-shadow: 0 2px 12px rgba(20,23,28,0.10);
+  background: rgba(22, 27, 34, 0.45); /* More transparent */
+  border-left: 4px solid #58a6ff;
+  backdrop-filter: blur(2px);
+  transition: opacity 0.3s;
+}
+
+.status-alert.status-recording {
+  border-left-color: #fbbc05;
+  background: rgba(34, 27, 12, 0.45);
+}
+
+.status-alert.status-analyzing {
+  border-left-color: #58a6ff;
+}
+
+.status-alert.status-done {
+  border-left-color: #2ea043;
+  background: rgba(30, 45, 27, 0.45);
+}
+
+.status-alert.status-waiting {
+  border-left-color: #fbbc05;
+}

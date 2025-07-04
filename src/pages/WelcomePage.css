@@ -1,0 +1,106 @@
+.welcome-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background: linear-gradient(135deg, #0d1117 0%, #23272f 100%);
+  color: #e6edf3;
+  padding: 80px 16px 0 16px; /* Add top padding for navbar */
+}
+
+.welcome-header {
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 40px;
+}
+
+.welcome-logo {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px auto;
+}
+
+.welcome-tagline {
+  color: #58a6ff;
+  font-size: 1.2rem;
+  margin-top: 8px;
+  margin-bottom: 0;
+}
+
+.welcome-flex {
+  display: flex;
+  gap: 32px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 40px;
+}
+
+.welcome-card {
+  background: rgba(22, 27, 34, 0.98);
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(20, 23, 28, 0.25);
+  border: 1.5px solid #21262d;
+  padding: 32px 24px 24px 24px;
+  width: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.welcome-card:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 8px 32px rgba(88,166,255,0.12);
+}
+
+.welcome-card img {
+  width: 72px;
+  height: 72px;
+  margin-bottom: 18px;
+}
+
+.welcome-card h3 {
+  color: #58a6ff;
+  margin-bottom: 10px;
+}
+
+.welcome-card p {
+  font-size: 1rem;
+  margin-bottom: 18px;
+  color: #c9d1d9;
+  text-align: center;
+}
+
+.btn {
+  background: linear-gradient(90deg, #238636 60%, #2ea043 100%);
+  border: none;
+  padding: 10px 22px;
+  border-radius: 8px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.2px;
+  box-shadow: 0 2px 8px rgba(34, 139, 34, 0.08);
+  transition: background 0.2s, transform 0.1s;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #2ea043 60%, #238636 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+@media (max-width: 900px) {
+  .welcome-flex {
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+  }
+  .welcome-card {
+    width: 90vw;
+    max-width: 340px;
+  }
+}

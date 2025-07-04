@@ -1,0 +1,118 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(135deg, #0d1117 0%, #23272f 100%);
+  color: #c9d1d9;
+  min-height: 100vh;
+}
+
+.container {
+  max-width: 850px;
+  margin: 48px auto;
+  padding: 32px 28px;
+  background: rgba(22, 27, 34, 0.98);
+  border-radius: 18px;
+  box-shadow: 0 8px 32px rgba(20, 23, 28, 0.45), 0 1.5px 4px rgba(88,166,255,0.07);
+  border: 1.5px solid #21262d;
+  backdrop-filter: blur(2px);
+}
+
+h2, h3, h4 {
+  color: #58a6ff;
+  margin-bottom: 12px;
+  letter-spacing: 0.5px;
+  font-weight: 700;
+}
+
+label {
+  display: block;
+  margin-top: 22px;
+  margin-bottom: 8px;
+  font-weight: 600;
+  color: #c9d1d9;
+  letter-spacing: 0.2px;
+}
+
+textarea, input, select {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 18px;
+  border-radius: 10px;
+  background-color: #161b22;
+  border: 1.5px solid #30363d;
+  color: #c9d1d9;
+  resize: vertical;
+  font-size: 1rem;
+  transition: border-color 0.2s, box-shadow 0.2s;
+  box-shadow: 0 1px 2px rgba(20,23,28,0.04);
+}
+
+textarea:focus, input:focus, select:focus {
+  outline: none;
+  border-color: #58a6ff;
+  box-shadow: 0 0 0 2px #58a6ff33;
+}
+
+.btn {
+  background: linear-gradient(90deg, #238636 60%, #2ea043 100%);
+  border: none;
+  padding: 12px 28px;
+  border-radius: 10px;
+  color: #fff;
+  cursor: pointer;
+  font-weight: 700;
+  margin-right: 12px;
+  font-size: 1rem;
+  letter-spacing: 0.3px;
+  box-shadow: 0 2px 8px rgba(34, 139, 34, 0.08);
+  transition: background 0.2s, transform 0.1s;
+}
+
+.btn:hover {
+  background: linear-gradient(90deg, #2ea043 60%, #238636 100%);
+  transform: translateY(-2px) scale(1.03);
+}
+
+.error {
+  color: #f85149;
+  margin-top: 12px;
+  font-weight: bold;
+  background: #2d1117;
+  padding: 8px 14px;
+  border-radius: 6px;
+  border-left: 4px solid #f85149;
+}
+
+.navigation {
+  margin-top: 28px;
+  display: flex;
+  gap: 16px;
+}
+
+.feedback-section {
+  margin: 24px 0;
+  padding: 16px 18px;
+  border-left: 5px solid #58a6ff;
+  background: linear-gradient(90deg, #21262d 80%, #23272f 100%);
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(88,166,255,0.04);
+  font-size: 1.08rem;
+  color: #e6edf3;
+  transition: background 0.2s;
+}
+
+@media (max-width: 600px) {
+  .container {
+    padding: 12px 4vw;
+    border-radius: 10px;
+  }
+  .feedback-section {
+    padding: 10px 6px;
+    border-radius: 6px;
+  }
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
