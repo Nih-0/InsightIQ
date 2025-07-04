@@ -1,43 +1,43 @@
-🚀 InsightIQ – AI Interview Analyzer (Frontend)
-InsightIQ is an AI-powered interview preparation tool designed to help users practice interview questions through text or audio and receive intelligent, real-time feedback. This React-based frontend interfaces seamlessly with a backend (Spring Boot) to provide a smooth and interactive experience.
+# 🚀 InsightIQ – AI Interview Analyzer (Frontend)
 
-✨ Features
-🖥 Modern Welcome Page – Clean and user-friendly landing page with intuitive navigation
+**InsightIQ** is an AI-powered interview preparation tool designed to help users practice answering interview questions through both text and audio inputs. Built with **React**, it provides real-time, intelligent feedback by integrating with a **Spring Boot backend** and AI models like OpenAI/Gemini.
 
-💬 Text & Audio Analysis – Submit responses and receive detailed AI-generated feedback
+---
 
-📊 Progress Tracking – Review your previous attempts and monitor your improvement over time
+## ✨ Features
 
-📞 Contact Form – Send messages via EmailJS integration
+- **Modern Welcome Page** – Clean, responsive landing page with intuitive navigation
+- **Text & Audio Analysis** – Submit responses and receive AI-generated feedback on technical and soft skills
+- **Progress Tracking** – Monitor improvement over multiple attempts (optional extension)
+- **Email Contact Form** – Integrated with EmailJS to send bug reports or suggestions
+- **Fully Responsive** – Optimized for both desktop and mobile users
+- **About & Connect Pages** – Inform users about the platform and provide support access
 
-📱 Responsive Design – Optimized for desktop and mobile screens
+---
 
-ℹ️ About & Connect Pages – Learn more about the project or reach out to the team
+## 🔧 Getting Started
 
-🔧 Getting Started
-📦 Prerequisites
-Make sure you have the following installed:
+### 📦 Prerequisites
 
-Node.js (v16+ recommended) → https://nodejs.org/
+Ensure the following tools are installed:
 
-npm → https://www.npmjs.com/
+- Node.js (v16 or above): https://nodejs.org/
+- npm: https://www.npmjs.com/ (or yarn: https://yarnpkg.com/)
+- Backend server running at: `http://localhost:8080/api`
 
-yarn (optional) → https://yarnpkg.com/
-
-Backend server (Spring Boot) running at http://localhost:8080/api
-
-You can refer to the backend repository here:
+👉 Backend Repository:  
 https://github.com/Nih-0/InsightIQ_Backend
 
-📁 Installation Steps
-Clone the repository:
+---
 
-bash
-Copy
-Edit
+### 📁 Installation Steps
+
+1. **Clone the Repository**
+
+```bash
 git clone https://github.com/your-username/ai-interview-analyzer-frontend.git
 cd ai-interview-analyzer-frontend
-Install dependencies:
+Install Dependencies
 
 bash
 Copy
@@ -45,7 +45,7 @@ Edit
 npm install
 # or
 yarn install
-Configure environment variables:
+Configure Environment Variables
 
 Create a .env file in the root of the project and add the following:
 
@@ -56,9 +56,9 @@ REACT_APP_API_BASE_URL=http://localhost:8080/api
 REACT_APP_EMAILJS_SERVICE_ID=service_1yd4k6v
 REACT_APP_EMAILJS_TEMPLATE_ID=template_s7qq7ro
 REACT_APP_EMAILJS_PUBLIC_KEY=V9jDMw4QCXLDkOsG3
-Restart the dev server after editing .env.
+After updating the .env file, restart your development server.
 
-Start the development server:
+Start Development Server
 
 bash
 Copy
@@ -66,61 +66,70 @@ Edit
 npm start
 # or
 yarn start
-Your app will be live at: http://localhost:3000
+Access the app at:
+http://localhost:3000
 
 📂 Project Structure
-bash
+text
 Copy
 Edit
 src/
-│
 ├── components/      # Reusable UI components (Navbar, Alerts, etc.)
 ├── pages/           # Main views (WelcomePage, HomePage, AnalysisPage, etc.)
-├── services/        # API interactions (apiService.js)
-├── styles/          # Global and scoped styles
-├── App.js           # Routes and layout
-└── index.js         # Entry point of the React app
-.env                 # Local environment variables
+├── services/        # API functions and utilities (e.g., apiService.js)
+├── styles/          # CSS or Tailwind styling files
+├── App.js           # App routes and layout
+└── index.js         # Entry point
+
+.env                 # Environment variable config
 📧 EmailJS Integration
-Email sending is powered by EmailJS
+Service: https://www.emailjs.com/
 
-Website: https://www.emailjs.com/
+Used for the contact form functionality
 
-Configure your .env with Service ID, Template ID, and Public Key
+Ensure your .env contains correct EmailJS credentials:
 
-Your template must include these variables: name, email, message
+REACT_APP_EMAILJS_SERVICE_ID
+
+REACT_APP_EMAILJS_TEMPLATE_ID
+
+REACT_APP_EMAILJS_PUBLIC_KEY
+
+Your EmailJS template must include:
+name, email, and message variables.
 
 🔗 Backend API Integration
-The frontend expects a backend API at the URL specified in:
+All API requests are sent to:
+REACT_APP_API_BASE_URL=http://localhost:8080/api
 
-nginx
-Copy
-Edit
-REACT_APP_API_BASE_URL
-Expected API Endpoints:
+📘 Expected API Endpoints
 Method	Endpoint	Description
 POST	/analyze	Analyze text-based answers
 POST	/transcribe	Transcribe audio to text
-POST	/analyze-audio	Analyze spoken answers
+POST	/analyze-audio	Analyze spoken/audio-based answers
 
-Make sure CORS is enabled for http://localhost:3000 on your backend.
+Ensure CORS is enabled for http://localhost:3000 in your Spring Boot backend.
+
+
 
 🛠 Troubleshooting
-Issue	Possible Fix
-.env not working?	Ensure it's in the root directory and restart the dev server
-API calls going to undefined/...?	Check your .env values and restart
-EmailJS not sending?	Verify the Service ID, Template ID, and variables in the EmailJS dashboard
+Issue	Solution
+.env not working	Ensure it is at the project root and restart your dev server
+API calls failing or undefined	Check .env values and base URL; confirm backend is running
+EmailJS not sending	Verify service ID, template ID, and variable names in EmailJS dashboard
 
-🚀 Deployment
-To create a production build:
+📦 Deployment
+To build the frontend for production:
 
 bash
 Copy
 Edit
 npm run build
-or
+# or
 yarn build
-Then deploy the contents of the build/ folder to any static hosting provider, like:
+Deploy the contents of the build/ folder to any static hosting provider:
+
+``` 
 
 Vercel → https://vercel.com/
 
@@ -128,16 +137,14 @@ Netlify → https://www.netlify.com/
 
 GitHub Pages → https://pages.github.com/
 
-📄 License
-This project is for educational or demo use. Please add a license file if required.
 
 📚 Learn More
 React Docs → https://react.dev/
 
 Create React App → https://create-react-app.dev/docs/getting-started/
 
-EmailJS Documentation → https://www.emailjs.com/docs/
+EmailJS Docs → https://www.emailjs.com/docs/
 
-Spring Boot (Backend) → https://spring.io/projects/spring-boot
+Spring Boot Backend → https://spring.io/projects/spring-boot
 
-Backend GitHub Repository → https://github.com/Nih-0/InsightIQ_Backend
+Backend Repo → https://github.com/Nih-0/InsightIQ_Backend
