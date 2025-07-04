@@ -1,70 +1,143 @@
-# Getting Started with Create React App
+🚀 InsightIQ – AI Interview Analyzer (Frontend)
+InsightIQ is an AI-powered interview preparation tool designed to help users practice interview questions through text or audio and receive intelligent, real-time feedback. This React-based frontend interfaces seamlessly with a backend (Spring Boot) to provide a smooth and interactive experience.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+✨ Features
+🖥 Modern Welcome Page – Clean and user-friendly landing page with intuitive navigation
 
-## Available Scripts
+💬 Text & Audio Analysis – Submit responses and receive detailed AI-generated feedback
 
-In the project directory, you can run:
+📊 Progress Tracking – Review your previous attempts and monitor your improvement over time
 
-### `npm start`
+📞 Contact Form – Send messages via EmailJS integration
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+📱 Responsive Design – Optimized for desktop and mobile screens
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+ℹ️ About & Connect Pages – Learn more about the project or reach out to the team
 
-### `npm test`
+🔧 Getting Started
+📦 Prerequisites
+Make sure you have the following installed:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Node.js (v16+ recommended) → https://nodejs.org/
 
-### `npm run build`
+npm → https://www.npmjs.com/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+yarn (optional) → https://yarnpkg.com/
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Backend server (Spring Boot) running at http://localhost:8080/api
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+You can refer to the backend repository here:
+https://github.com/Nih-0/InsightIQ_Backend
 
-### `npm run eject`
+📁 Installation Steps
+Clone the repository:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+bash
+Copy
+Edit
+git clone https://github.com/your-username/ai-interview-analyzer-frontend.git
+cd ai-interview-analyzer-frontend
+Install dependencies:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+bash
+Copy
+Edit
+npm install
+# or
+yarn install
+Configure environment variables:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Create a .env file in the root of the project and add the following:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+ini
+Copy
+Edit
+REACT_APP_API_BASE_URL=http://localhost:8080/api
+REACT_APP_EMAILJS_SERVICE_ID=service_1yd4k6v
+REACT_APP_EMAILJS_TEMPLATE_ID=template_s7qq7ro
+REACT_APP_EMAILJS_PUBLIC_KEY=V9jDMw4QCXLDkOsG3
+Restart the dev server after editing .env.
 
-## Learn More
+Start the development server:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+bash
+Copy
+Edit
+npm start
+# or
+yarn start
+Your app will be live at: http://localhost:3000
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+📂 Project Structure
+bash
+Copy
+Edit
+src/
+│
+├── components/      # Reusable UI components (Navbar, Alerts, etc.)
+├── pages/           # Main views (WelcomePage, HomePage, AnalysisPage, etc.)
+├── services/        # API interactions (apiService.js)
+├── styles/          # Global and scoped styles
+├── App.js           # Routes and layout
+└── index.js         # Entry point of the React app
+.env                 # Local environment variables
+📧 EmailJS Integration
+Email sending is powered by EmailJS
 
-### Code Splitting
+Website: https://www.emailjs.com/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Configure your .env with Service ID, Template ID, and Public Key
 
-### Analyzing the Bundle Size
+Your template must include these variables: name, email, message
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+🔗 Backend API Integration
+The frontend expects a backend API at the URL specified in:
 
-### Making a Progressive Web App
+nginx
+Copy
+Edit
+REACT_APP_API_BASE_URL
+Expected API Endpoints:
+Method	Endpoint	Description
+POST	/analyze	Analyze text-based answers
+POST	/transcribe	Transcribe audio to text
+POST	/analyze-audio	Analyze spoken answers
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Make sure CORS is enabled for http://localhost:3000 on your backend.
 
-### Advanced Configuration
+🛠 Troubleshooting
+Issue	Possible Fix
+.env not working?	Ensure it's in the root directory and restart the dev server
+API calls going to undefined/...?	Check your .env values and restart
+EmailJS not sending?	Verify the Service ID, Template ID, and variables in the EmailJS dashboard
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+🚀 Deployment
+To create a production build:
 
-### Deployment
+bash
+Copy
+Edit
+npm run build
+or
+yarn build
+Then deploy the contents of the build/ folder to any static hosting provider, like:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+Vercel → https://vercel.com/
 
-### `npm run build` fails to minify
+Netlify → https://www.netlify.com/
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+GitHub Pages → https://pages.github.com/
+
+📄 License
+This project is for educational or demo use. Please add a license file if required.
+
+📚 Learn More
+React Docs → https://react.dev/
+
+Create React App → https://create-react-app.dev/docs/getting-started/
+
+EmailJS Documentation → https://www.emailjs.com/docs/
+
+Spring Boot (Backend) → https://spring.io/projects/spring-boot
+
+Backend GitHub Repository → https://github.com/Nih-0/InsightIQ_Backend
